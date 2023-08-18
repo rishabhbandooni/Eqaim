@@ -27,31 +27,62 @@ body {
   background-color: rgb(55, 63, 104);
   color: white;
 }
+
 .cardContainer {
   /* min-height: 70vh; */
-  border: 1px solid gray;
+  // border: 1px solid gray;
   border-radius: 1rem;
   margin: 1rem;
   padding: 1rem;
 }
 .cardContent {
-  min-height: 10vh;
-  border: 1px solid gray;
+  min-height: 5vh;
+  border: 1px solid transparent;
   border-radius: 1rem;
-  margin: 1rem;
+  // margin-top: -1rem;
   padding: 1rem;
+}
+.cardProducts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ffffff;
+  // margin-top: -2rem;
+}
+.category {
+  border-radius: 0.5rem;
+  background-color: #f2f4ff;
+  font-weight: 600;
+  margin: 0.6rem;
+  padding: 0.3rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: #4661e6;
+}
+.category:hover {
+  border: 1px solid transparent;
+  background-color: #4661e6;
+  color: #f2f4ff;
+}
+.upvotes {
+  margin-right: 5rem;
+}
+.cardContentHeading {
+  font-weight: 600;
+  color: black;
 }
 .card1 {
   min-height: 10vh;
   border-radius: 1rem;
   margin: 1rem;
   padding: 1rem;
-  border: 1px solid transparent;
-  overflow: hidden;
+
   cursor: pointer;
-  background: #12c2e9;
-  background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
-  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  background-image: url(../../assets/suggestions/desktop/background-header.png);
+  // background: #12c2e9;
+  // background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  // background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
 }
 .card1 h6,
 h4 {
@@ -64,16 +95,13 @@ h4 {
   padding: 1rem;
   background-color: #ffffff;
   border-radius: 1rem;
-  border: 1px solid transparent;
-  overflow: hidden;
-  cursor: pointer;
 }
 .card2Button {
-  border: 1px solid transparent;
   border-radius: 1rem;
   background-color: #f2f4ff;
   font-weight: 600;
   margin: 0.6rem;
+  border: none;
   cursor: pointer;
   color: #4661e6;
 }
@@ -97,7 +125,7 @@ h4 {
   padding: 1rem;
   background-color: #ffffff;
   border-radius: 1rem;
-  border: 1px solid transparent;
+
   overflow: hidden;
   cursor: pointer;
 }
