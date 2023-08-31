@@ -40,7 +40,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <Link href='/quiz'  >
+            <Link href='/overview'  >
         <button  className="buttonCss rounded-md  px-3.5 py-2.5 text-sm font-semibold">Start Quiz</button>
       </Link>
             </form>
