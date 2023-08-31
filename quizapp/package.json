@@ -1,5 +1,5 @@
 {
-  "name": "quizapp",
+  "name": "nextjs13-quiz-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.4.19",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.8",
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@mui/icons-material": "^5.14.7",
+    "@mui/material": "^5.14.7",
+    "@mui/styled-engine-sc": "^5.14.7",
+    "@tailwindcss/forms": "^0.5.6",
+    "next": "13.4.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^5.3.11"
+  },
+  "devDependencies": {
+    "@types/node": "20.5.7",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3",
+    "typescript": "5.2.2"
   }
 }
