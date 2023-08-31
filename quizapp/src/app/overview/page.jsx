@@ -18,6 +18,7 @@ import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 import Timer from '@/src/components/Timer'
+import OverviewPagination from '@/src/components/OverviewPagination'
 // import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 // const sortOptions = [
 //   { name: 'Most Popular', href: '#', current: true },
@@ -143,22 +144,16 @@ export default function page() {
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">Quiz Game</h1>
 
             <div className="flex items-center">
-              {/* <Menu as="div" className="relative inline-block text-left"> */}
+             
                 <div>
                   
-                  {/* <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900"> */}
+               
                   <Timer />
-                    {/* <TimerOutlinedIcon
-                      className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                      aria-hidden="true"
-                    />
-                  </Menu.Button> */}
+                  
                 </div>
 
               
-              {/* </Menu> */}
-
-       
+              
               <button
                 type="button"
                 className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
@@ -180,20 +175,21 @@ export default function page() {
               <form className="hidden lg:block">
                 {/* <h3 className="sr-only">Categories</h3> */}
                 <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
-                  <h3>Overview</h3>
+                  <h3>Questions Overview</h3>
                   {/* {subCategories.map((category) => (
                     <li key={category.name}>
                       <a href={category.href}>{category.name}</a>
                     </li>
                   ))} */}
-                </ul>
+                  <OverviewPagination />
+                                  </ul>
 
                 
               </form>
 
               {/* Product grid */}
               <div className="lg:col-span-3 bg-black text-black">
-            <h1>HEY</h1>
+            <h1>THE QUIZ GAME</h1>
               </div>
             </div>
           </section>

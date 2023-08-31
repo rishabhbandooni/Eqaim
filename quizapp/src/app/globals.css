@@ -28,6 +28,16 @@ cursor: pointer;
   background-color: white;
   color: #007FFF ;
 }
+.OverviewPagination button{
+  background-color: #007FFF;
+  color: #fafafa;
+  margin: .7rem;
+
+}
+.OverviewPagination button:hover{
+  color: #007FFF;
+  background-color: #fafafa;
+}
 .textheading{
   color: #007FFF;
   
