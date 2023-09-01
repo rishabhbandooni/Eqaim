@@ -131,7 +131,13 @@ li {
   padding: 8px 0;
 }
 @media screen and (max-width: 600px) {
-  .aboutImage {
+  .OverviewPagination {
     display: none;
+  }
+  .QuestionsOverview {
+    align-items: flex-start;
+  }
+  .QuizPageMobile {
+    display: block !important ;
   }
 }

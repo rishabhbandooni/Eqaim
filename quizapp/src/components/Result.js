@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { randomIndex } from "../helper";
 import { setGivenAnswers } from "../store/questionSlice";
 
-const QuizPage = ({ selectedQuestion }) => {
+const Result = ({ selectedQuestion }) => {
   const dispatch = useDispatch();
 
   const [options, setOptions] = useState([]);
@@ -36,7 +36,6 @@ const QuizPage = ({ selectedQuestion }) => {
   return (
     <Box>
       <Box
-        className="QuizPageMobile"
         sx={{
           width: "100%",
           display: "flex",
@@ -101,7 +100,6 @@ const QuizPage = ({ selectedQuestion }) => {
             ))}
         </Box>
       </Box>
-
       <Box
         sx={{
           marginTop: "2rem",
@@ -110,9 +108,9 @@ const QuizPage = ({ selectedQuestion }) => {
           alignItems: "center",
         }}
       >
-        <Link href="/result">
+        <Link href="/">
           <Button variant="outlined" sx={{ width: "20%" }}>
-            Submit
+            Home
           </Button>
         </Link>
       </Box>
@@ -126,4 +124,4 @@ const QuizPage = ({ selectedQuestion }) => {
 // question: "The main antagonist of the second part of JoJo&#039;s Bizarre Adventure is which of the following?";
 // type: "multiple";
 
-export default QuizPage;
+export default Result;

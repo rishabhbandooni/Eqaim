@@ -3,13 +3,13 @@ import { Fragment, useState, useEffect } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FunnelIcon } from "@heroicons/react/20/solid";
-import Timer from "@/src/components/Timer";
-import QuizPage from "@/src/components/QuizPage";
+
 import { useDispatch, useSelector } from "react-redux";
 import { fetchQuestions } from "@/src/api";
 import { setQuestions, setVisited } from "@/src/store/questionSlice";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
+import Result from "@/src/components/Result";
 
 // Component
 export default function page() {
@@ -98,17 +98,6 @@ export default function page() {
                       <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
                   </div>
-
-                  <form className="mt-4 border-t border-gray-200">
-                    <ul
-                      role="list"
-                      className="px-2 py-3 font-medium text-gray-900"
-                    >
-                      <h2 className="px-2 py-3 font-medium text-gray-900">
-                        Phone Overview
-                      </h2>
-                    </ul>
-                  </form>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
@@ -118,12 +107,12 @@ export default function page() {
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-              Quiz Game
+              Result Page
             </h1>
 
             <div className="flex items-center">
               <div>
-                <Timer />
+                <h3>TotalScore: 10/15</h3>
               </div>
 
               <button
@@ -131,7 +120,7 @@ export default function page() {
                 className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
                 onClick={() => setMobileFiltersOpen(true)}
               >
-                <span className="sr-only">Overview</span>
+                <span className="sr-only">Questions</span>
                 <FunnelIcon className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
@@ -139,7 +128,7 @@ export default function page() {
 
           <div className="QuestionsOverview">
             <Box sx={{ maxWidth: "25%", padding: "1rem" }}>
-              <h3>Questions Overview</h3>
+              <h3>Result Section</h3>
               <Box className="OverviewPagination">
                 {questions.length > 0 &&
                   questions.map((q, i) => (
@@ -219,7 +208,7 @@ export default function page() {
               </Box>
             </Box>
             <Box sx={{ width: "75%" }}>
-              <QuizPage selectedQuestion={selectedQuestion} />
+              <Result selectedQuestion={selectedQuestion} />
             </Box>
           </div>
         </main>
