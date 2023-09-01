@@ -1,8 +1,8 @@
 // src/components/QuizPage.js
-'use client'
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { fetchQuestions } from '../api/api.js';
+"use client";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { fetchQuestions } from "../../api/api.js";
 
 const page = () => {
   const questions = useSelector((state) => state.questions);
@@ -32,9 +32,11 @@ const page = () => {
               <p>{question.question}</p>
               <ul>
                 {/* Concatenate correct and incorrect answers for choices */}
-                {([...question.incorrect_answers, question.correct_answer]).map((choice, choiceIndex) => (
-                  <li key={choiceIndex}>{choice}</li>
-                ))}
+                {[...question.incorrect_answers, question.correct_answer].map(
+                  (choice, choiceIndex) => (
+                    <li key={choiceIndex}>{choice}</li>
+                  )
+                )}
               </ul>
             </div>
           ))}
