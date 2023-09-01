@@ -1,48 +1,49 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
- 
-
 }
 
 main {
   padding: 1rem;
 }
-.buttonCss{ background-color:#007FFF;
-color: #fafafa;
-cursor: pointer;
-}
-.buttonCss:hover{
-  border: 1px solid gray;
-  background-color: white;
-  color: #007FFF ;
-}
-.OverviewPagination button{
-  background-color: #007FFF;
+.buttonCss {
+  background-color: #007fff;
   color: #fafafa;
-  margin: .7rem;
-
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
 }
-.OverviewPagination button:hover{
-  color: #007FFF;
-  background-color: #fafafa;
+.buttonCss:hover {
+  border: 1px solid #007fff;
+  background-color: #fff;
+  color: #007fff;
 }
-.textheading{
-  color: #007FFF;
-  
+.OverviewPagination {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
-h1, h2 {
+.textheading {
+  color: #007fff;
+}
+.QuestionsOverview {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+h1,
+h2 {
   color: #eee;
 }
 
@@ -51,13 +52,13 @@ h3 {
   color: #000105;
   font-size: 1.8rem;
 }
-.emailButton{
+.emailButton {
   padding: 16px 8px;
   width: 100%;
   margin-top: 12px;
   font-size: 1rem;
   border-radius: 4px;
-   background-color: #808080;
+  background-color: #808080;
   color: #f8f8f8;
 }
 button {

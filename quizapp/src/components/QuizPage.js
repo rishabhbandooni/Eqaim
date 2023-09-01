@@ -1,14 +1,18 @@
 // src/components/QuizPage.js
-import React from "react";
-import { useSelector } from "react-redux";
+"use client";
+import { useEffect } from "react";
+import { questionsSlice } from "../store/questionSlice";
 
-const QuizPage = () => {
-  const questions = useSelector((state) => state.questions);
+const QuizPage = ({ selectedQuestion }) => {
+  // DEBUG
+  useEffect(() => {
+    console.log(selectedQuestion);
+  }, [selectedQuestion]);
 
   return (
     <div>
-      <h1>Quiz Page</h1>
-      {questions}
+      <h1>{selectedQuestion.question}</h1>
+
       {/* Display questions */}
     </div>
   );

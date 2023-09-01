@@ -1,24 +1,40 @@
 "use client";
-import { Fragment, useState } from "react";
-import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
+import { Fragment, useState, useEffect } from "react";
+import { Dialog, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  FunnelIcon,
-  MinusIcon,
-  PlusIcon,
-  Squares2X2Icon,
-} from "@heroicons/react/20/solid";
+import { FunnelIcon } from "@heroicons/react/20/solid";
 import Timer from "@/src/components/Timer";
-import OverviewPagination from "@/src/components/OverviewPagination";
 import QuizPage from "@/src/components/QuizPage";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchQuestions } from "@/src/api";
+import { setQuestions } from "@/src/store/questionSlice";
+import Box from "@mui/material/Box";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
+// Component
 export default function page() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const questions = useSelector((state) => state.questions.question);
+  const dispatch = useDispatch();
+
+  const [selectedQuestion, setSelectedQuestion] = useState({});
+
+  const fetchData = async () => {
+    try {
+      if (questions.length > 0) {
+        console.log("I HAVE QUESTIONS");
+      } else {
+        console.log("I DONT HAVE QUESTIONS");
+        const data = await fetchQuestions();
+        dispatch(setQuestions(data));
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="bg-white">
@@ -113,35 +129,42 @@ export default function page() {
             </div>
           </div>
 
-          <section aria-labelledby="products-heading" className="pb-24 pt-6">
-            {/* <h2 id="products-heading" className="sr-only">
-              Products
-            </h2> */}
-
-            <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-              {/* Filters */}
-              <form className="hidden lg:block">
-                {/* <h3 className="sr-only">Categories</h3> */}
-                <ul
-                  role="list"
-                  className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
-                >
-                  <h3>Questions Overview</h3>
-                  {/* {subCategories.map((category) => (
-                    <li key={category.name}>
-                      <a href={category.href}>{category.name}</a>
-                    </li>
-                  ))} */}
-                  <OverviewPagination />
-                </ul>
-              </form>
-
-              {/* Product grid */}
-              <div className="lg:col-span-3 bg-black text-black">
-                <QuizPage />
-              </div>
-            </div>
-          </section>
+          <div className="QuestionsOverview">
+            <Box sx={{ maxWidth: "25%", padding: "1rem" }}>
+              <h3>Questions Overview</h3>
+              <Box className="OverviewPagination">
+                {questions.length > 0 &&
+                  questions.map((q, i) => (
+                    <Box
+                      sx={{
+                        width: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <Box
+                        onClick={() => setSelectedQuestion(q)}
+                        sx={{
+                          height: "50px",
+                          width: "50px",
+                          borderRadius: "0.5rem",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                        className="buttonCss"
+                      >
+                        {i + 1}
+                      </Box>
+                    </Box>
+                  ))}
+              </Box>
+            </Box>
+            <Box sx={{ width: "65%", maxWidth: "45%" }}>
+              <QuizPage selectedQuestion={selectedQuestion} />
+            </Box>
+          </div>
         </main>
       </div>
     </div>
