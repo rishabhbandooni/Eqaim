@@ -7,24 +7,26 @@ import Timer from "@/src/components/Timer";
 import QuizPage from "@/src/components/QuizPage";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchQuestions } from "@/src/api";
-import { setQuestions } from "@/src/store/questionSlice";
+import { setQuestions, setVisited } from "@/src/store/questionSlice";
 import Box from "@mui/material/Box";
+import { Button } from "@mui/material";
 
 // Component
 export default function page() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const questions = useSelector((state) => state.questions.question);
   const dispatch = useDispatch();
-
+  const [activeButton, setActiveButton] = useState(0);
   const [selectedQuestion, setSelectedQuestion] = useState({});
 
   const fetchData = async () => {
     try {
-      if (questions.length > 0) {
-        console.log("I HAVE QUESTIONS");
+      if (localStorage.getItem("questions")) {
+        dispatch(setQuestions(JSON.parse(localStorage.getItem("questions"))));
       } else {
-        console.log("I DONT HAVE QUESTIONS");
+        console.log("API");
         const data = await fetchQuestions();
+
         dispatch(setQuestions(data));
       }
     } catch (err) {
@@ -35,6 +37,20 @@ export default function page() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    if (questions.length > 0) {
+      setSelectedQuestion(questions[activeButton]);
+      dispatch(setVisited(questions[activeButton].question));
+    }
+  }, [questions]);
+
+  useEffect(() => {
+    if (questions.length > 0) {
+      setSelectedQuestion(questions[activeButton]);
+      dispatch(setVisited(questions[activeButton].question));
+    }
+  }, [activeButton]);
 
   return (
     <div className="bg-white">
@@ -136,6 +152,7 @@ export default function page() {
                 {questions.length > 0 &&
                   questions.map((q, i) => (
                     <Box
+                      key={i}
                       sx={{
                         width: "100%",
                         display: "flex",
@@ -144,7 +161,10 @@ export default function page() {
                       }}
                     >
                       <Box
-                        onClick={() => setSelectedQuestion(q)}
+                        onClick={() => {
+                          setSelectedQuestion(q);
+                          setActiveButton(i);
+                        }}
                         sx={{
                           height: "50px",
                           width: "50px",
@@ -153,15 +173,60 @@ export default function page() {
                           alignItems: "center",
                           justifyContent: "center",
                         }}
-                        className="buttonCss"
+                        className={
+                          activeButton === i
+                            ? q.visited
+                              ? q.givenAnswer
+                                ? "buttonCss answered"
+                                : "buttonCss visited"
+                              : "buttonCss active"
+                            : q.visited
+                            ? q.givenAnswer
+                              ? "buttonCss answered"
+                              : "buttonCss visited"
+                            : "buttonCss"
+                        }
                       >
                         {i + 1}
                       </Box>
                     </Box>
                   ))}
               </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginTop: "2rem",
+                }}
+              >
+                <Button
+                  onClick={() => {
+                    if (activeButton - 1 < 0) {
+                      return;
+                    }
+                    setActiveButton(activeButton - 1);
+                  }}
+                  sx={{ width: "40%" }}
+                  variant="outlined"
+                >
+                  Prev
+                </Button>
+                <Button
+                  onClick={() => {
+                    if (activeButton + 1 > questions.length - 1) {
+                      return;
+                    }
+                    setActiveButton(activeButton + 1);
+                  }}
+                  sx={{ width: "40%" }}
+                  variant="outlined"
+                >
+                  Next
+                </Button>
+              </Box>
             </Box>
-            <Box sx={{ width: "65%", maxWidth: "45%" }}>
+            <Box sx={{ width: "75%" }}>
               <QuizPage selectedQuestion={selectedQuestion} />
             </Box>
           </div>

@@ -33,6 +33,12 @@ main {
   grid-gap: 1rem;
   justify-content: center;
   align-items: center;
+  min-height: 314px;
+}
+.active {
+  border: 1px solid #007fff;
+  background-color: #fff;
+  color: #007fff;
 }
 .textheading {
   color: #007fff;
@@ -70,6 +76,18 @@ button {
   cursor: pointer;
   background-color: #808080;
   color: #f8f8f8;
+}
+.visited {
+  background: orange;
+}
+.answered {
+  background: green;
+}
+.bgred {
+  background-color: red;
+}
+.bggreen {
+  background-color: green;
 }
 
 .btn-disabled {
