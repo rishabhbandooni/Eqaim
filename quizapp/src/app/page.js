@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 export default function Home() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [error, setError] = useState("");
@@ -16,13 +17,13 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email) {
+    if (email.replaceAll(" ", "") == "") {
       setError("Please enter your email address.");
     } else if (!isValid) {
       setError("Please enter a valid email address.");
     } else {
       setError("");
-      // You can submit the form or trigger the next action here
+      router.push("/overview");
       console.log("Email submitted:", email);
     }
   };
@@ -46,6 +47,7 @@ export default function Home() {
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                 <div className="mt-0 sm:mx-auto sm:w-full sm:max-w-full">
+                  {error && <p className="error">{error}</p>}
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label
@@ -67,15 +69,10 @@ export default function Home() {
                         />
                       </div>
                     </div>
-                    <Link href="/overview">
-                      <button
-                        className="buttonCss rounded-md  px-3.5 py-2.5 text-sm font-semibold"
-                        disabled={!isValid}
-                      >
-                        Start Quiz
-                      </button>
-                    </Link>
-                    {error && <p className="error">{error}</p>}
+
+                    <button className="buttonCss rounded-md  px-3.5 py-2.5 text-sm font-semibold">
+                      Start Quiz
+                    </button>
                   </form>
                 </div>
               </div>

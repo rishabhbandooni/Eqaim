@@ -11,7 +11,6 @@ import { setQuestions, setVisited } from "@/src/store/questionSlice";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 
-// Component
 export default function page() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const questions = useSelector((state) => state.questions.question);

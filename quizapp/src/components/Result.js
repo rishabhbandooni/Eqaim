@@ -77,22 +77,16 @@ const Result = ({ selectedQuestion }) => {
             options.map((o, i) => (
               <button
                 key={i}
-                onClick={() => {
-                  if (selectedQuestion.givenAnswer) return;
-                  dispatch(
-                    setGivenAnswers({
-                      question: selectedQuestion.question,
-                      givenAnswer: o,
-                    })
-                  );
-                }}
                 className={
                   selectedQuestion.givenAnswer == undefined
                     ? ""
                     : selectedQuestion.givenAnswer == o
-                    ? o == selectedQuestion.correct_answer
+                    ? selectedQuestion.givenAnswer ==
+                      selectedQuestion.correct_answer
                       ? "bggreen"
                       : "bgred"
+                    : o == selectedQuestion.correct_answer
+                    ? "bggreen"
                     : ""
                 }
                 dangerouslySetInnerHTML={{ __html: o }}

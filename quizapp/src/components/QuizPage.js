@@ -20,7 +20,11 @@ const QuizPage = ({ selectedQuestion }) => {
     arr.splice(index, 0, element);
     setOptions(arr);
   }
-
+  function handleClick() {
+    if (window != undefined) {
+      localStorage.removeItem("remainingTime");
+    }
+  }
   // DEBUG
   useEffect(() => {
     console.log(selectedQuestion.givenAnswer);
@@ -111,7 +115,11 @@ const QuizPage = ({ selectedQuestion }) => {
         }}
       >
         <Link href="/result">
-          <Button variant="outlined" sx={{ width: "20%" }}>
+          <Button
+            variant="outlined"
+            sx={{ width: "20%" }}
+            onClick={handleClick}
+          >
             Submit
           </Button>
         </Link>

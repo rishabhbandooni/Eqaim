@@ -5,52 +5,28 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { FunnelIcon } from "@heroicons/react/20/solid";
 
 import { useDispatch, useSelector } from "react-redux";
-import { fetchQuestions } from "@/src/api";
-import { setQuestions, setVisited } from "@/src/store/questionSlice";
+
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import Result from "@/src/components/Result";
 
-// Component
 export default function page() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const questions = useSelector((state) => state.questions.question);
-  const dispatch = useDispatch();
-  const [activeButton, setActiveButton] = useState(0);
   const [selectedQuestion, setSelectedQuestion] = useState({});
 
-  const fetchData = async () => {
-    try {
-      if (localStorage.getItem("questions")) {
-        dispatch(setQuestions(JSON.parse(localStorage.getItem("questions"))));
-      } else {
-        console.log("API");
-        const data = await fetchQuestions();
-
-        dispatch(setQuestions(data));
+  function getScore() {
+    let score = 0;
+    questions.forEach((q) => {
+      if (q.givenAnswer == q.correct_answer) {
+        score++;
       }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
+    });
+    return score;
+  }
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    if (questions.length > 0) {
-      setSelectedQuestion(questions[activeButton]);
-      dispatch(setVisited(questions[activeButton].question));
-    }
+    if (questions.length > 0) setSelectedQuestion(questions[0]);
   }, [questions]);
-
-  useEffect(() => {
-    if (questions.length > 0) {
-      setSelectedQuestion(questions[activeButton]);
-      dispatch(setVisited(questions[activeButton].question));
-    }
-  }, [activeButton]);
 
   return (
     <div className="bg-white">
@@ -112,7 +88,9 @@ export default function page() {
 
             <div className="flex items-center">
               <div>
-                <h3>TotalScore: 10/15</h3>
+                <h3>
+                  TotalScore:{getScore()}/{questions.length}
+                </h3>
               </div>
 
               <button
@@ -144,7 +122,6 @@ export default function page() {
                       <Box
                         onClick={() => {
                           setSelectedQuestion(q);
-                          setActiveButton(i);
                         }}
                         sx={{
                           height: "50px",
@@ -155,56 +132,17 @@ export default function page() {
                           justifyContent: "center",
                         }}
                         className={
-                          activeButton === i
-                            ? q.visited
-                              ? q.givenAnswer
-                                ? "buttonCss answered"
-                                : "buttonCss visited"
-                              : "buttonCss active"
-                            : q.visited
-                            ? q.givenAnswer
-                              ? "buttonCss answered"
-                              : "buttonCss visited"
-                            : "buttonCss"
+                          q.givenAnswer == undefined
+                            ? "buttonCss"
+                            : q.givenAnswer == q.correct_answer
+                            ? "bggreen"
+                            : "bgred"
                         }
                       >
                         {i + 1}
                       </Box>
                     </Box>
                   ))}
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  marginTop: "2rem",
-                }}
-              >
-                <Button
-                  onClick={() => {
-                    if (activeButton - 1 < 0) {
-                      return;
-                    }
-                    setActiveButton(activeButton - 1);
-                  }}
-                  sx={{ width: "40%" }}
-                  variant="outlined"
-                >
-                  Prev
-                </Button>
-                <Button
-                  onClick={() => {
-                    if (activeButton + 1 > questions.length - 1) {
-                      return;
-                    }
-                    setActiveButton(activeButton + 1);
-                  }}
-                  sx={{ width: "40%" }}
-                  variant="outlined"
-                >
-                  Next
-                </Button>
               </Box>
             </Box>
             <Box sx={{ width: "75%" }}>
