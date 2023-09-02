@@ -98,24 +98,17 @@ export default function page() {
                     </button>
                   </div>
 
-                  <form className="mt-4 border-t border-gray-200">
-                    <ul
-                      role="list"
-                      className="px-2 py-3 font-medium text-gray-900"
-                    >
-                      <h2 className="px-2 py-3 font-medium text-gray-900">
-                        Phone Overview
-                      </h2>
-                    </ul>
-                  </form>
+                  <h2 className="px-2 py-3 font-medium text-gray-900">
+                    Phone Overview
+                  </h2>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
           </Dialog>
         </Transition.Root>
 
-        <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
+        <main className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="quizGameHeading flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">
               Quiz Game
             </h1>
@@ -200,6 +193,7 @@ export default function page() {
                   }}
                   sx={{ width: "40%" }}
                   variant="outlined"
+                  className="buttonCss"
                 >
                   Prev
                 </Button>
@@ -212,6 +206,7 @@ export default function page() {
                   }}
                   sx={{ width: "40%" }}
                   variant="outlined"
+                  className="buttonCss"
                 >
                   Next
                 </Button>

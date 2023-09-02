@@ -80,6 +80,9 @@ button {
 .visited {
   background: orange;
 }
+.spanHead {
+  color: #007fff;
+}
 .answered {
   background: green;
 }
@@ -139,5 +142,14 @@ li {
   }
   .QuizPageMobile {
     display: block !important ;
+  }
+  .aboutDiv {
+    display: none;
+  }
+  .quizGameHeading {
+    padding: 2rem;
+  }
+  .quizGameHeading h1 {
+    font-size: 20px;
   }
 }

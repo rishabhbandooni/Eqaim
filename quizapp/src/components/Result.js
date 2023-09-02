@@ -103,7 +103,11 @@ const Result = ({ selectedQuestion }) => {
         }}
       >
         <Link href="/">
-          <Button variant="outlined" sx={{ width: "20%" }}>
+          <Button
+            className="buttonCss"
+            variant="outlined"
+            sx={{ width: "30%" }}
+          >
             Home
           </Button>
         </Link>
