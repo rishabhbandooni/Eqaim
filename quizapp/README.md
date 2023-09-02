@@ -4,6 +4,8 @@
 
 This quiz application is designed to allow users to take quizzes and receive immediate feedback on their scores. It includes a timer that automatically submits the quiz after 30 minutes of inactivity. The application is built using ReactJS, Redux, Next.js, and Material UI, Tailwind CSS
 
+Website Link : https://the-rishquiz-app.vercel.app/
+
 **Points To Remember While Using The Game**
 1- You Cannot Start Quiz Game Without Email.
 2- As You start the game There is a timer of 30 Minutes and as the time ends the game automaticaly will end or you have to use submit button if you want to end it sooner.
