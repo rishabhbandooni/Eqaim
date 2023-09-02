@@ -44,4 +44,4 @@ During the development of this application, some of the challenges encountered a
    -Making Which questions the user has visited , I have Done it Via orange color button.
    -Making Which questions have been attempted, I have Done it Via green color button.
 
-4. **Styling**: Achieving a visually appealing design using Material UI and ensuring consistent styling throughout the application. Challenges were addressed through experimentation and referring to Material UI, Taiwind documentation and examples.
+4. **Making it Responsive**: Achieving a visually appealing design using Material UI and ensuring consistent styling throughout the application. Challenges were addressed through experimentation and referring to Material UI, Taiwind documentation and examples.

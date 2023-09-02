@@ -1,22 +1,51 @@
 "use client";
-import { Fragment, useState, useEffect } from "react";
-import { Dialog, Menu, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import { FunnelIcon } from "@heroicons/react/20/solid";
+import React, { Fragment, useState, useEffect } from "react";
+
 import Timer from "@/src/components/Timer";
 import QuizPage from "@/src/components/QuizPage";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchQuestions } from "@/src/api";
 import { setQuestions, setVisited } from "@/src/store/questionSlice";
-import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
+import { Global } from "@emotion/react";
+import { styled } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import PropTypes from "prop-types";
+import { grey } from "@mui/material/colors";
+import Box from "@mui/material/Box";
+import CloseIcon from "@mui/icons-material/Close";
+import Typography from "@mui/material/Typography";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
-export default function page() {
+export default function page(props) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const questions = useSelector((state) => state.questions.question);
   const dispatch = useDispatch();
   const [activeButton, setActiveButton] = useState(0);
   const [selectedQuestion, setSelectedQuestion] = useState({});
+  const drawerBleeding = 56;
+
+  const Root = styled("div")(({ theme }) => ({
+    height: "100%",
+    backgroundColor:
+      theme.palette.mode === "light"
+        ? grey[100]
+        : theme.palette.background.default,
+  }));
+
+  const StyledBox = styled(Box)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "light" ? "#fff" : grey[800],
+  }));
+
+  const Puller = styled(Box)(({ theme }) => ({
+    width: 30,
+    height: 6,
+    backgroundColor: theme.palette.mode === "light" ? grey[300] : grey[900],
+    borderRadius: 3,
+    position: "absolute",
+    top: 8,
+    left: "calc(50% - 15px)",
+  }));
 
   const fetchData = async () => {
     try {
@@ -32,6 +61,16 @@ export default function page() {
       console.log(err);
     }
   };
+  const { window } = props;
+  const [open, setOpen] = React.useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
+
+  // This is used only for the example
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
 
   useEffect(() => {
     fetchData();
@@ -54,78 +93,16 @@ export default function page() {
   return (
     <div className="bg-white">
       <div>
-        {/* Mobile filter dialog */}
-        <Transition.Root show={mobileFiltersOpen} as={Fragment}>
-          <Dialog
-            as="div"
-            className="relative z-40 lg:hidden"
-            onClose={setMobileFiltersOpen}
-          >
-            <Transition.Child
-              as={Fragment}
-              enter="transition-opacity ease-linear duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="transition-opacity ease-linear duration-300"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black bg-opacity-25" />
-            </Transition.Child>
-
-            <div className="fixed inset-0 z-40 flex">
-              <Transition.Child
-                as={Fragment}
-                enter="transition ease-in-out duration-300 transform"
-                enterFrom="translate-x-full"
-                enterTo="translate-x-0"
-                leave="transition ease-in-out duration-300 transform"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-full"
-              >
-                <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
-                  <div className="flex items-center justify-between px-4">
-                    <h2 className="text-lg font-medium text-gray-900">
-                      Filters
-                    </h2>
-                    <button
-                      type="button"
-                      className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
-                      onClick={() => setMobileFiltersOpen(false)}
-                    >
-                      <span className="sr-only">Close menu</span>
-                      <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                    </button>
-                  </div>
-
-                  <h2 className="px-2 py-3 font-medium text-gray-900">
-                    Phone Overview
-                  </h2>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </Dialog>
-        </Transition.Root>
-
-        <main className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <main className="quizGameContainer mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="quizGameHeading flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+            <h1 className="quizGame text-4xl font-bold tracking-tight text-gray-900">
               Quiz Game
             </h1>
 
-            <div className="flex items-center">
+            <div className="timerContainer flex items-center">
               <div>
                 <Timer />
               </div>
-
-              <button
-                type="button"
-                className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
-                onClick={() => setMobileFiltersOpen(true)}
-              >
-                <span className="sr-only">Overview</span>
-                <FunnelIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
             </div>
           </div>
 
@@ -193,7 +170,7 @@ export default function page() {
                   }}
                   sx={{ width: "40%" }}
                   variant="outlined"
-                  className="buttonCss"
+                  className="buttonCss PrevNext"
                 >
                   Prev
                 </Button>
@@ -206,17 +183,119 @@ export default function page() {
                   }}
                   sx={{ width: "40%" }}
                   variant="outlined"
-                  className="buttonCss"
+                  className="buttonCss PrevNext"
                 >
                   Next
                 </Button>
               </Box>
             </Box>
-            <Box sx={{ width: "75%" }}>
+            <Box className="quizPageBox" sx={{ width: "75%" }}>
               <QuizPage selectedQuestion={selectedQuestion} />
             </Box>
           </div>
         </main>
+        <div>
+          <Root>
+            <CssBaseline />
+            <Global
+              styles={{
+                ".MuiDrawer-root > .MuiPaper-root": {
+                  height: `calc(50% - ${drawerBleeding}px)`,
+                  overflow: "visible",
+                },
+              }}
+            />
+
+            <SwipeableDrawer
+              className="drawerDesktop"
+              container={container}
+              anchor="bottom"
+              open={open}
+              onClose={toggleDrawer(false)}
+              onOpen={toggleDrawer(true)}
+              swipeAreaWidth={drawerBleeding}
+              disableSwipeToOpen={false}
+              ModalProps={{
+                keepMounted: true,
+              }}
+            >
+              <StyledBox
+                sx={{
+                  position: "absolute",
+                  top: -drawerBleeding,
+                  borderTopLeftRadius: 8,
+                  borderTopRightRadius: 8,
+                  visibility: "visible",
+                  right: 0,
+                  left: 0,
+                }}
+              >
+                <Puller />
+                <Typography sx={{ p: 2, color: "text.secondary" }}>
+                  Questions Overview
+                </Typography>
+              </StyledBox>
+              <StyledBox
+                sx={{
+                  px: 2,
+                  pb: 2,
+                  height: "100%",
+                  overflow: "auto",
+                }}
+              >
+                <CloseIcon
+                  onClick={() => setOpen(false)}
+                  className="closeIcon"
+                />
+
+                <Box className="OverviewPaginationMobile">
+                  {questions.length > 0 &&
+                    questions.map((q, i) => (
+                      <Box
+                        key={i}
+                        sx={{
+                          width: "100%",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Box
+                          onClick={() => {
+                            setSelectedQuestion(q);
+                            setActiveButton(i);
+                          }}
+                          sx={{
+                            height: "50px",
+                            width: "50px",
+                            borderRadius: "0.5rem",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                          className={
+                            activeButton === i
+                              ? q.visited
+                                ? q.givenAnswer
+                                  ? "buttonCss answered"
+                                  : "buttonCss visited"
+                                : "buttonCss active"
+                              : q.visited
+                              ? q.givenAnswer
+                                ? "buttonCss answered"
+                                : "buttonCss visited"
+                              : "buttonCss"
+                          }
+                        >
+                          {i + 1}
+                        </Box>
+                      </Box>
+                    ))}
+                </Box>
+              </StyledBox>
+            </SwipeableDrawer>
+          </Root>
+        </div>
       </div>
     </div>
   );

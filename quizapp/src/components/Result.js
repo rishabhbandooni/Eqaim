@@ -63,6 +63,7 @@ const Result = ({ selectedQuestion }) => {
           )}
         </Box>
         <Box
+          className="QuizPageMobileAnswers"
           sx={{
             display: "grid",
             gridTemplateColumns: "30% 30%",
@@ -95,6 +96,7 @@ const Result = ({ selectedQuestion }) => {
         </Box>
       </Box>
       <Box
+        className="SubmitBox"
         sx={{
           marginTop: "2rem",
           display: "flex",
@@ -104,7 +106,7 @@ const Result = ({ selectedQuestion }) => {
       >
         <Link href="/">
           <Button
-            className="buttonCss"
+            className="buttonCss SubmitButton"
             variant="outlined"
             sx={{ width: "30%" }}
           >

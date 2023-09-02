@@ -40,7 +40,7 @@ const QuizPage = ({ selectedQuestion }) => {
   return (
     <Box>
       <Box
-        className="QuizPageMobile"
+        className="QuizPageMobileContainer"
         sx={{
           width: "100%",
           display: "flex",
@@ -51,6 +51,7 @@ const QuizPage = ({ selectedQuestion }) => {
         }}
       >
         <Box
+          className="QuizPageMobileQuestion"
           sx={{
             width: "80%",
             padding: "1rem",
@@ -68,6 +69,7 @@ const QuizPage = ({ selectedQuestion }) => {
           )}
         </Box>
         <Box
+          className="QuizPageMobileAnswers"
           sx={{
             display: "grid",
             gridTemplateColumns: "30% 30%",
@@ -107,6 +109,7 @@ const QuizPage = ({ selectedQuestion }) => {
       </Box>
 
       <Box
+        className="SubmitBox"
         sx={{
           marginTop: "2rem",
           display: "flex",
@@ -117,6 +120,7 @@ const QuizPage = ({ selectedQuestion }) => {
         <Link href="/result">
           <Button
             variant="outlined"
+            className="buttonCss SubmitButton"
             sx={{ width: "20%" }}
             onClick={handleClick}
           >

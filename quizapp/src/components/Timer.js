@@ -45,8 +45,9 @@ const Timer = () => {
   };
 
   return (
-    <Typography variant="h4" align="center">
-      Time Remaining: {formatTime(timeRemaining)}
+    <Typography className="timer" variant="h4" align="center">
+      Time Remaining:
+      {formatTime(timeRemaining)}
     </Typography>
   );
 };
