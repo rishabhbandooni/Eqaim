@@ -191,9 +191,10 @@ li {
     flex-direction: column;
     display: flex;
     align-items: flex-start;
+    margin-top: -1rem;
   }
   .PrevNext {
-    margin-right: 14rem !important;
+    margin-right: 12rem !important;
   }
 
   .QuestionsOverview h3 {
@@ -203,7 +204,7 @@ li {
     width: 100% !important;
   }
   .QuizPageMobileContainer {
-    margin-top: 3rem !important;
+    margin-top: 1rem !important;
   }
   .QuizPageMobileAnswers {
     display: flex !important;
@@ -211,12 +212,13 @@ li {
     align-items: center !important;
     width: 60% !important;
     flex-direction: column !important;
+    margin-top: 0rem;
   }
   .SubmitBox {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    margin-top: 2rem !important;
+    margin-top: 1rem !important;
   }
   .SubmitButton {
     width: 100% !important;

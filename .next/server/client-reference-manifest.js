@@ -235,7 +235,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "*",
         "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
+          "app/overview/page:static/chunks/app/overview/page.js"
         ],
         "async": false
       },
@@ -243,7 +243,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "",
         "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
+          "app/overview/page:static/chunks/app/overview/page.js"
         ],
         "async": false
       },
@@ -251,7 +251,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "default",
         "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
+          "app/overview/page:static/chunks/app/overview/page.js"
         ],
         "async": false
       }
@@ -382,58 +382,6 @@ self.__RSC_MANIFEST={
         "name": "default",
         "chunks": [
           "app/overview/page:static/chunks/app/overview/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/app/result/page.jsx": {
-      "*": {
-        "id": "(sc_client)/./src/app/result/page.jsx",
-        "name": "*",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/app/result/page.jsx",
-        "name": "",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/app/result/page.jsx",
-        "name": "default",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/Result.js": {
-      "*": {
-        "id": "(sc_client)/./src/components/Result.js",
-        "name": "*",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/Result.js",
-        "name": "",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/components/Result.js",
-        "name": "default",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
         ],
         "async": false
       }
@@ -1122,7 +1070,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
+        "app/overview/page:static/chunks/app/overview/page.js"
       ],
       "async": false
     },
@@ -1130,7 +1078,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
+        "app/overview/page:static/chunks/app/overview/page.js"
       ],
       "async": false
     },
@@ -1138,7 +1086,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
+        "app/overview/page:static/chunks/app/overview/page.js"
       ],
       "async": false
     },
@@ -1146,7 +1094,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
+        "app/overview/page:static/chunks/app/overview/page.js"
       ],
       "async": false
     },
@@ -1154,7 +1102,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
+        "app/overview/page:static/chunks/app/overview/page.js"
       ],
       "async": false
     },
@@ -1162,7 +1110,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
+        "app/overview/page:static/chunks/app/overview/page.js"
       ],
       "async": false
     },
@@ -1290,54 +1238,6 @@ self.__RSC_MANIFEST={
       "name": "default",
       "chunks": [
         "app/overview/page:static/chunks/app/overview/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page.jsx": {
-      "id": "(app-client)/./src/app/result/page.jsx",
-      "name": "*",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page.jsx#": {
-      "id": "(app-client)/./src/app/result/page.jsx",
-      "name": "",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page.jsx#default": {
-      "id": "(app-client)/./src/app/result/page.jsx",
-      "name": "default",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/components/Result.js": {
-      "id": "(app-client)/./src/components/Result.js",
-      "name": "*",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/components/Result.js#": {
-      "id": "(app-client)/./src/components/Result.js",
-      "name": "",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/components/Result.js#default": {
-      "id": "(app-client)/./src/components/Result.js",
-      "name": "default",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
       ],
       "async": false
     }

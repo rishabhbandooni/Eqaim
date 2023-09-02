@@ -10,9 +10,6 @@ self.__RSC_CSS_MANIFEST={
     ],
     "/Users/sorishabh/Desktop/TheQuizApp/src/app/overview/page": [
       "/Users/sorishabh/Desktop/TheQuizApp/src/globals.css"
-    ],
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page": [
-      "/Users/sorishabh/Desktop/TheQuizApp/src/globals.css"
     ]
   }
 }
