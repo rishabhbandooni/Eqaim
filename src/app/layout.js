@@ -1,7 +1,7 @@
 "use client";
 import { Provider } from "react-redux";
 import { store } from "../store/store";
-import "./globals.css";
+import "../../src/globals.css";
 
 // const inter = Inter({ subsets: ['latin'] })
 

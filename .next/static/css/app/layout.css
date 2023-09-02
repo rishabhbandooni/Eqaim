@@ -1,6 +1,6 @@
-/*!***************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[2].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[2].oneOf[12].use[3]!./src/app/globals.css ***!
-  \***************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[2].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[2].oneOf[12].use[3]!./src/globals.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
 /*
 ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 *//*
@@ -1076,55 +1076,55 @@ li {
     align-items: flex-start;
   }
   .PrevNext {
-    margin-right: 14rem;
+    margin-right: 14rem !important;
   }
   .QuestionsOverview h3 {
-    display: none;
+    display: none !important;
   }
   .quizPageBox {
-    width: 100%;
+    width: 100% !important;
   }
   .QuizPageMobileContainer {
-    margin-top: 3rem;
+    margin-top: 3rem !important;
   }
   .QuizPageMobileAnswers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    flex-direction: column;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 60% !important;
+    flex-direction: column !important;
   }
   .SubmitBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 2rem !important;
   }
   .SubmitButton {
-    width: 100%;
+    width: 100% !important;
   }
   .aboutDiv {
     display: none;
   }
   .quizGameContainer {
-    padding: 0;
+    padding: 0 !important;
   }
   .quizGameHeading {
-    padding: 1.5rem;
+    padding: 1.5rem !important;
   }
 
   .quizGame {
-    font-size: 20px;
+    font-size: 20px !important;
   }
   .timer {
-    font-size: 20px;
+    font-size: 20px !important;
   }
   .timerContainer {
-    flex-direction: column;
+    flex-direction: column !important;
   }
   .totalScoreContainer {
-    flex-direction: column;
-    padding: 1.5rem;
+    flex-direction: column !important;
+    padding: 1.5rem !important;
   }
 }
 .placeholder\:text-gray-400::-moz-placeholder {
