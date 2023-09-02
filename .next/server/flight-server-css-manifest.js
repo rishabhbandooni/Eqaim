@@ -5,13 +5,13 @@ self.__RSC_CSS_MANIFEST={
     ]
   },
   "cssModules": {
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page": [
-      "/Users/sorishabh/Desktop/TheQuizApp/src/globals.css"
-    ],
     "/Users/sorishabh/Desktop/TheQuizApp/src/app/page": [
       "/Users/sorishabh/Desktop/TheQuizApp/src/globals.css"
     ],
     "/Users/sorishabh/Desktop/TheQuizApp/src/app/overview/page": [
+      "/Users/sorishabh/Desktop/TheQuizApp/src/globals.css"
+    ],
+    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page": [
       "/Users/sorishabh/Desktop/TheQuizApp/src/globals.css"
     ]
   }

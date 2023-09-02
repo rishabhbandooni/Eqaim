@@ -162,6 +162,7 @@ export default function page(props) {
                 }}
               >
                 <Button
+                  className=" PrevNext"
                   onClick={() => {
                     if (activeButton - 1 < 0) {
                       return;
@@ -170,11 +171,11 @@ export default function page(props) {
                   }}
                   sx={{ width: "40%" }}
                   variant="outlined"
-                  className="buttonCss PrevNext"
                 >
                   Prev
                 </Button>
                 <Button
+                  className=" PrevNext"
                   onClick={() => {
                     if (activeButton + 1 > questions.length - 1) {
                       return;
@@ -183,7 +184,6 @@ export default function page(props) {
                   }}
                   sx={{ width: "40%" }}
                   variant="outlined"
-                  className="buttonCss PrevNext"
                 >
                   Next
                 </Button>

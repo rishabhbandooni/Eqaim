@@ -230,38 +230,12 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./src/app/layout.js": {
-      "*": {
-        "id": "(sc_client)/./src/app/layout.js",
-        "name": "*",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/app/layout.js",
-        "name": "",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/app/layout.js",
-        "name": "default",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      }
-    },
     "(app-client)/./node_modules/next/dist/client/link.js": {
       "*": {
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "*",
         "chunks": [
-          "app/overview/page:static/chunks/app/overview/page.js"
+          "app/result/page:static/chunks/app/result/page.js"
         ],
         "async": false
       },
@@ -269,64 +243,12 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "",
         "chunks": [
-          "app/overview/page:static/chunks/app/overview/page.js"
+          "app/result/page:static/chunks/app/result/page.js"
         ],
         "async": false
       },
       "default": {
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
-        "name": "default",
-        "chunks": [
-          "app/overview/page:static/chunks/app/overview/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/app/result/page.jsx": {
-      "*": {
-        "id": "(sc_client)/./src/app/result/page.jsx",
-        "name": "*",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/app/result/page.jsx",
-        "name": "",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/app/result/page.jsx",
-        "name": "default",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/Result.js": {
-      "*": {
-        "id": "(sc_client)/./src/components/Result.js",
-        "name": "*",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/Result.js",
-        "name": "",
-        "chunks": [
-          "app/result/page:static/chunks/app/result/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/components/Result.js",
         "name": "default",
         "chunks": [
           "app/result/page:static/chunks/app/result/page.js"
@@ -356,6 +278,32 @@ self.__RSC_MANIFEST={
         "name": "default",
         "chunks": [
           "app/page:static/chunks/app/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/layout.js": {
+      "*": {
+        "id": "(sc_client)/./src/app/layout.js",
+        "name": "*",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/app/layout.js",
+        "name": "",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./src/app/layout.js",
+        "name": "default",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
         ],
         "async": false
       }
@@ -434,6 +382,58 @@ self.__RSC_MANIFEST={
         "name": "default",
         "chunks": [
           "app/overview/page:static/chunks/app/overview/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/result/page.jsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/result/page.jsx",
+        "name": "*",
+        "chunks": [
+          "app/result/page:static/chunks/app/result/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/app/result/page.jsx",
+        "name": "",
+        "chunks": [
+          "app/result/page:static/chunks/app/result/page.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./src/app/result/page.jsx",
+        "name": "default",
+        "chunks": [
+          "app/result/page:static/chunks/app/result/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/Result.js": {
+      "*": {
+        "id": "(sc_client)/./src/components/Result.js",
+        "name": "*",
+        "chunks": [
+          "app/result/page:static/chunks/app/result/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/components/Result.js",
+        "name": "",
+        "chunks": [
+          "app/result/page:static/chunks/app/result/page.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./src/components/Result.js",
+        "name": "default",
+        "chunks": [
+          "app/result/page:static/chunks/app/result/page.js"
         ],
         "async": false
       }
@@ -1118,6 +1118,78 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
+    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/client/link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/esm/client/link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/client/link.js#": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/esm/client/link.js#": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/client/link.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "default",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/esm/client/link.js#default": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "default",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/src/app/page.js": {
+      "id": "(app-client)/./src/app/page.js",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/src/app/page.js#": {
+      "id": "(app-client)/./src/app/page.js",
+      "name": "",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/src/app/page.js#default": {
+      "id": "(app-client)/./src/app/page.js",
+      "name": "default",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
     "/Users/sorishabh/Desktop/TheQuizApp/src/globals.css#": {
       "id": "null",
       "name": "default",
@@ -1146,126 +1218,6 @@ self.__RSC_MANIFEST={
       "name": "default",
       "chunks": [
         "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/client/link.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "*",
-      "chunks": [
-        "app/overview/page:static/chunks/app/overview/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/esm/client/link.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "*",
-      "chunks": [
-        "app/overview/page:static/chunks/app/overview/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/client/link.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "",
-      "chunks": [
-        "app/overview/page:static/chunks/app/overview/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/esm/client/link.js#": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "",
-      "chunks": [
-        "app/overview/page:static/chunks/app/overview/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/client/link.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "default",
-      "chunks": [
-        "app/overview/page:static/chunks/app/overview/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/node_modules/next/dist/esm/client/link.js#default": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "default",
-      "chunks": [
-        "app/overview/page:static/chunks/app/overview/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page.jsx": {
-      "id": "(app-client)/./src/app/result/page.jsx",
-      "name": "*",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page.jsx#": {
-      "id": "(app-client)/./src/app/result/page.jsx",
-      "name": "",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page.jsx#default": {
-      "id": "(app-client)/./src/app/result/page.jsx",
-      "name": "default",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/components/Result.js": {
-      "id": "(app-client)/./src/components/Result.js",
-      "name": "*",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/components/Result.js#": {
-      "id": "(app-client)/./src/components/Result.js",
-      "name": "",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/components/Result.js#default": {
-      "id": "(app-client)/./src/components/Result.js",
-      "name": "default",
-      "chunks": [
-        "app/result/page:static/chunks/app/result/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/page.js": {
-      "id": "(app-client)/./src/app/page.js",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/page.js#": {
-      "id": "(app-client)/./src/app/page.js",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/Users/sorishabh/Desktop/TheQuizApp/src/app/page.js#default": {
-      "id": "(app-client)/./src/app/page.js",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -1338,6 +1290,54 @@ self.__RSC_MANIFEST={
       "name": "default",
       "chunks": [
         "app/overview/page:static/chunks/app/overview/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page.jsx": {
+      "id": "(app-client)/./src/app/result/page.jsx",
+      "name": "*",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page.jsx#": {
+      "id": "(app-client)/./src/app/result/page.jsx",
+      "name": "",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/src/app/result/page.jsx#default": {
+      "id": "(app-client)/./src/app/result/page.jsx",
+      "name": "default",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/src/components/Result.js": {
+      "id": "(app-client)/./src/components/Result.js",
+      "name": "*",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/src/components/Result.js#": {
+      "id": "(app-client)/./src/components/Result.js",
+      "name": "",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
+      ],
+      "async": false
+    },
+    "/Users/sorishabh/Desktop/TheQuizApp/src/components/Result.js#default": {
+      "id": "(app-client)/./src/components/Result.js",
+      "name": "default",
+      "chunks": [
+        "app/result/page:static/chunks/app/result/page.js"
       ],
       "async": false
     }

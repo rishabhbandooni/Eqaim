@@ -1035,6 +1035,17 @@ li {
   border-radius: 4px;
 }
 
+.PrevNext {
+  background-color: #007fff;
+  color: #fafafa;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+.PrevNext:hover {
+  border: 1px solid #007fff;
+  background-color: #fff;
+  color: #007fff;
+}
 .container p {
   padding: 8px 0;
 }
@@ -1043,6 +1054,17 @@ li {
 }
 .drawerDesktop {
   display: none;
+}
+.SubmitButton {
+  background-color: #007fff;
+  color: #fafafa;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+.SubmitButton:hover {
+  border: 1px solid #007fff;
+  background-color: #fff;
+  color: #007fff;
 }
 @media screen and (max-width: 600px) {
   .OverviewPagination {
@@ -1078,6 +1100,7 @@ li {
   .PrevNext {
     margin-right: 14rem !important;
   }
+
   .QuestionsOverview h3 {
     display: none !important;
   }

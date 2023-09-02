@@ -119,8 +119,8 @@ const QuizPage = ({ selectedQuestion }) => {
       >
         <Link href="/result">
           <Button
-            variant="outlined"
             className="buttonCss SubmitButton"
+            variant="outlined"
             sx={{ width: "20%" }}
             onClick={handleClick}
           >
