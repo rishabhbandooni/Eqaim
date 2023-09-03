@@ -219,6 +219,7 @@ li {
     justify-content: center !important;
     align-items: center !important;
     margin-top: 1rem !important;
+    margin-bottom: 5rem;
   }
   .SubmitButton {
     width: 100% !important;

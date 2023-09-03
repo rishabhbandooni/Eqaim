@@ -1,6 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();

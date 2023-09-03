@@ -48,6 +48,7 @@ const QuizPage = ({ selectedQuestion }) => {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
+          overflowY: "scroll",
         }}
       >
         <Box
